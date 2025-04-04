@@ -33,7 +33,7 @@ public partial class SettingsPageV : ContentPage
         if (result != null)
         {
             ApiService.SetStorageValue(Constants.AppConstants.GetCategoryListApi, result);
-            expenseValue.Text = result;
+            categoryValue.Text = result;
         }
 
     }
