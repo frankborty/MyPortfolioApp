@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyPortfolioApp.Views.SettingsPageV"
+             Title="SettingsPageV">
+    <VerticalStackLayout>
+        <VerticalStackLayout Spacing="5">
+            <VerticalStackLayout Padding="10">
+                <Label Text="Expense endpoint" />
+                <Grid ColumnDefinitions="*, auto" VerticalOptions="Center" ColumnSpacing="10">
+                    <Entry x:Name="expenseValue" IsReadOnly="True" Placeholder="No endopoint saved" />
+                    <Button Grid.Column="1" Text="Edit" Clicked="EditExpenseEndPoint" ></Button>
+                </Grid>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Spacing="5">
+            <VerticalStackLayout Padding="10">
+                <Label Text="Category endpoint" />
+                <Grid ColumnDefinitions="*, auto" VerticalOptions="Center" ColumnSpacing="10">
+                    <Entry x:Name="categoryValue" IsReadOnly="True" Placeholder="No endopoint saved" />
+                    <Button Grid.Column="1" Text="Edit" Clicked="EditCategoryEndPoint" ></Button>
+                </Grid>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

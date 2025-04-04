@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyPortfolioApp.Views.NewExpensePageV"
+            xmlns:viewmodels="clr-namespace:MyPortfolioApp.ViewModels"
+             xmlns:models="clr-namespace:MyPortfolioApp.Models"
+             x:DataType="viewmodels:ExpenseVM">
+    <Grid RowDefinitions="*,Auto">
+        <VerticalStackLayout Spacing="5">
+            <VerticalStackLayout Padding="10">
+                <Label Text="Descrizione" />
+                <Entry Text="{Binding Description}" Placeholder="Tipo" />
+            </VerticalStackLayout>
+
+            <Grid Grid.Row="1" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <VerticalStackLayout Grid.Column="0" Margin="0,0,10,0">
+                    <Label Text="Categoria" />
+                    <Picker ItemsSource="{Binding ExpenseCategoryList}" 
+                        SelectedItem="{Binding Category}"
+                        ItemDisplayBinding="{Binding Name}"/>
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                    <Label Text="Tipo"/>
+                    <Picker ItemsSource="{Binding ExpenseTypeList}" 
+                        SelectedItem="{Binding ExpenseType, Mode=TwoWay}" />
+                </VerticalStackLayout>
+            </Grid>
+
+
+            <Grid Grid.Row="1" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <VerticalStackLayout Grid.Column="0" Margin="0,0,10,0">
+                    <Label Text="Importo (€)" />
+                    <Entry Text="{Binding Amount}" Keyboard="Numeric" Placeholder="0.00" />
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                    <Label Text="Data"/>
+                    <DatePicker Date="{Binding Date}" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <VerticalStackLayout Padding="10">
+                <Label Text="Note" />
+                <Editor Text="{Binding Note}" 
+            Placeholder="Inserisci una nota" 
+            AutoSize="TextChanges" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+        <Button Margin="10,0,10,10" ImageSource="spending.png" 
+                BackgroundColor="LightBlue" Grid.Row="1" 
+                HeightRequest="50" Text="Aggiungi spesa" 
+                Command="{Binding SaveCommand}"/>
+    </Grid>
+</ContentPage>

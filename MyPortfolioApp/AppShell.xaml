@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MyPortfolioApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MyPortfolioApp"
+    xmlns:views="clr-namespace:MyPortfolioApp.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="MyPortfolioApp">
+
+    <ShellContent
+        Title="Aggiungi Spesa"
+        Icon="addbutton.png"
+        ContentTemplate="{DataTemplate views:NewExpensePageV}"
+        Route="NewExpensePageV" />
+
+    <ShellContent
+        Title="Spese Salvate"
+        Icon="moneybag.png"
+        ContentTemplate="{DataTemplate views:StoredExpenseListV}"
+        Route="StoredExpenses" />
+
+    <ShellContent
+        Title="Categorie"
+        Icon="options.png"
+        ContentTemplate="{DataTemplate views:ExpenseCategoryListV}"
+        Route="ExpenseCategoryListV" />
+
+    <ShellContent
+        Title="Impostazioni"
+        Icon="settings.png"
+        ContentTemplate="{DataTemplate views:SettingsPageV}"
+        Route="SettingsPageV" />
+
+    <!-- Switch per la modalità Dark -->
+    <Shell.FlyoutFooter>
+        <HorizontalStackLayout Margin="10,0,0,0" Spacing="5" Padding="10">
+            <Label Text="Dark Mode" VerticalOptions="Center"/>
+            <Switch x:Name="darkModeToggle" Toggled="Switch_Toggled"/>
+        </HorizontalStackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>

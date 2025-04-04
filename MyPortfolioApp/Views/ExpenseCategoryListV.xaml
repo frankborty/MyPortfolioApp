@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyPortfolioApp.Views.ExpenseCategoryListV"
+             xmlns:views="clr-namespace:MyPortfolioApp.Views"
+             xmlns:viewmodels="clr-namespace:MyPortfolioApp.ViewModels"
+             x:DataType="viewmodels:ExpenseCategoryListVM"
+             Title="Categorie">
+    <Grid RowDefinitions="*,Auto">
+        <!-- Lista delle spese -->
+        <CollectionView Grid.Row="0" ItemsSource="{Binding ExpenseCategoryList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <views:ExpenseCategoryCardV />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Barra con i pulsanti fissi in basso -->
+        <Grid Grid.Row="1"  Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Download" ImageSource="download.png" HeightRequest="50" Margin="0, 0, 10, 0" Command="{Binding DownloadCategoyListCommand}"/>
+            <Button Grid.Column="1" Text="Use Default" ImageSource="circle.png" HeightRequest="50" Margin="10, 0, 0, 0" BackgroundColor="LightCoral" Command="{Binding UseDefaultCategoryListCommand}" ></Button>
+
+
+
+
+        </Grid>
+    </Grid>
+</ContentPage>
