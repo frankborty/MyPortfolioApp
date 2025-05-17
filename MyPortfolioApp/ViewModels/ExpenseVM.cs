@@ -128,7 +128,7 @@ namespace MyPortfolioApp.ViewModels
         public ExpenseVM()
         {
             
-            _expense = new ExpenseM() { Description = "Descrizione di esempio" };
+            _expense = new ExpenseM();
             LoadCategoryList();
             
             SaveCommand = new Command(async () => await CheckAndSave());
