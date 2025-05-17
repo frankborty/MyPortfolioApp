@@ -7,7 +7,8 @@ namespace MyPortfolioApp.Models
         public int Id { get; set; }
         public string TypeName { get; set; } = string.Empty;
 
-        public ExpenseTypeM() { 
+        public ExpenseTypeM()
+        {
             Id = IdUtils.GetNextTypeId();
         }
 

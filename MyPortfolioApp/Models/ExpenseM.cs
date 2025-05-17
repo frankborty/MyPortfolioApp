@@ -1,6 +1,4 @@
-﻿using MyPortfolioApp.Utils;
-
-namespace MyPortfolioApp.Models
+﻿namespace MyPortfolioApp.Models
 {
     public class ExpenseM
     {

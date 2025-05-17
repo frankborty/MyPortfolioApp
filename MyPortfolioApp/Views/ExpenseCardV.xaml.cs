@@ -4,9 +4,9 @@ namespace MyPortfolioApp.Views;
 
 public partial class ExpenseCardV : ContentView
 {
-	public ExpenseCardV()
-	{
-		InitializeComponent();
+    public ExpenseCardV()
+    {
+        InitializeComponent();
     }
 
     private void UploadButtonClicked(object sender, EventArgs e)

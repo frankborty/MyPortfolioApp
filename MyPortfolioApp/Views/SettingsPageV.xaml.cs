@@ -4,11 +4,11 @@ namespace MyPortfolioApp.Views;
 
 public partial class SettingsPageV : ContentPage
 {
-	public SettingsPageV()
-	{
+    public SettingsPageV()
+    {
 
-		InitializeComponent();
-		LoadEndPointValuse();
+        InitializeComponent();
+        LoadEndPointValuse();
     }
 
     private async void LoadEndPointValuse()
@@ -23,7 +23,7 @@ public partial class SettingsPageV : ContentPage
         if (result != null)
         {
             ApiService.SetStorageValue(Constants.AppConstants.AddExpenseListApi, result);
-            expenseValue.Text=result;
+            expenseValue.Text = result;
         }
     }
 

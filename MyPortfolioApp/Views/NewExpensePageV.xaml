@@ -10,7 +10,10 @@
         <VerticalStackLayout Spacing="5">
             <VerticalStackLayout Padding="10">
                 <Label Text="Descrizione" />
-                <Entry Placeholder="Descrizione" Text="{Binding Description}" />
+                <Entry
+                    ClearButtonVisibility="WhileEditing"
+                    Placeholder="Descrizione"
+                    Text="{Binding Description}" />
             </VerticalStackLayout>
 
             <Grid Grid.Row="1" Padding="10">

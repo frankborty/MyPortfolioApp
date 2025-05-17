@@ -1,5 +1,4 @@
 ﻿using MyPortfolioApp.Models;
-using System.Globalization;
 using System.Net.Http.Json;
 using System.Text.Json;
 
@@ -40,8 +39,6 @@ namespace MyPortfolioApp.Utils
         }
 
 
-
-
         public static async Task UploadExpenseList(List<ExpenseM> expenseListToUpload)
         {
             HttpClient _httpClient = new HttpClient();
@@ -49,7 +46,7 @@ namespace MyPortfolioApp.Utils
             HttpResponseMessage response = await _httpClient.PostAsJsonAsync(apiUrl, expenseListToUpload);
             response.EnsureSuccessStatusCode(); // Lancia un'eccezione se la risposta non è OK (200-299)
             return;
-            
+
         }
     }
 }

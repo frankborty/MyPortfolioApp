@@ -5,12 +5,12 @@ namespace MyPortfolioApp.Utils
     public static class ExpenseCategoryManager
     {
         private static List<ExpenseCategoryAndTypesDTO> categoryList = new List<ExpenseCategoryAndTypesDTO>();
-                
+
         public static List<ExpenseCategoryAndTypesDTO> GetCategoryList()
         {
             return categoryList;
         }
-        
+
         public static async Task LoadAndSaveDefaultCategory()
         {
             categoryList = new List<ExpenseCategoryAndTypesDTO>()

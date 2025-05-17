@@ -6,7 +6,7 @@ namespace MyPortfolioApp.Utils
 {
     internal static class StorageUtils
     {
-        
+
         public static void DeleteExpenseStorageFile()
         {
             string filePath = Path.Combine(FileSystem.AppDataDirectory, AppConstants.ExpenseListFileName);
@@ -27,7 +27,7 @@ namespace MyPortfolioApp.Utils
         public static void WriteExpenseToFile(ExpenseM expense)
         {
             string filePath = Path.Combine(FileSystem.AppDataDirectory, AppConstants.ExpenseListFileName);
-            File.AppendAllText(filePath, JsonSerializer.Serialize(expense)+Environment.NewLine);
+            File.AppendAllText(filePath, JsonSerializer.Serialize(expense) + Environment.NewLine);
         }
 
         public static async Task WriteExpenseCategoryListToFile(List<ExpenseCategoryAndTypesDTO> expenseCategoryList)
@@ -79,12 +79,12 @@ namespace MyPortfolioApp.Utils
             }
             foreach (string line in jsonLines)
             {
-                if(string.IsNullOrWhiteSpace(line))
+                if (string.IsNullOrWhiteSpace(line))
                 {
                     continue;
                 }
                 ExpenseM? expense = JsonSerializer.Deserialize<ExpenseM>(line);
-                if(expense is not null)
+                if (expense is not null)
                 {
                     expenseList.Add(expense);
                 }
@@ -123,7 +123,7 @@ namespace MyPortfolioApp.Utils
             }
             return JsonSerializer.Deserialize<List<ExpenseCategoryAndTypesDTO>>(jsonLines) ?? new List<ExpenseCategoryAndTypesDTO>();
         }
-        
+
         public static void UpdateExpenseListIntoFile(List<ExpenseM> expenseList)
         {
             DeleteExpenseStorageFile();

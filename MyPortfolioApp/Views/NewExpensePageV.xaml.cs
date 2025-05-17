@@ -15,6 +15,6 @@ public partial class NewExpensePageV : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-         _expenseVM.LoadCategoryList();
+        _expenseVM.LoadCategoryList();
     }
 }

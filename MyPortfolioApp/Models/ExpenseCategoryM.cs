@@ -1,5 +1,4 @@
-﻿using MyPortfolioApp.Models;
-using MyPortfolioApp.Utils;
+﻿using MyPortfolioApp.Utils;
 
 namespace MyPortfolioApp.Models
 {

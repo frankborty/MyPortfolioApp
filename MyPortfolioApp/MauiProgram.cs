@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Logging;
-using MyPortfolioApp.Models;
 using MyPortfolioApp.Utils;
 
 namespace MyPortfolioApp
@@ -9,7 +8,7 @@ namespace MyPortfolioApp
         public static MauiApp CreateMauiApp()
         {
             ExpenseCategoryManager.LoadCategoryFromFileList();
-            
+
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
@@ -20,7 +19,7 @@ namespace MyPortfolioApp
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -1,6 +1,4 @@
-﻿using MyPortfolioApp.Utils;
-
-namespace MyPortfolioApp
+﻿namespace MyPortfolioApp
 {
     public partial class App : Application
     {
